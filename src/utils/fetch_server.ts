@@ -16,7 +16,7 @@ export async function getData(url: string, tags?: string) {
     }
 
     const res = await fetch(
-        process.env.NEXT_PUBLIC_BACKEND_URL + url,
+        "https://api2.khojgurbani.org/api/v1" + url,
         requestOptions
     );
 
@@ -24,7 +24,7 @@ export async function getData(url: string, tags?: string) {
         throw new Error(`Failed to fetch data from ${url} with error ${res.status}`);
     }
 
-    console.log(process.env.NEXT_PUBLIC_BACKEND_URL, url, res.status);
+    console.log("https://api2.khojgurbani.org/api/v1", url, res.status);
     return res.json();
 }
 
@@ -45,7 +45,7 @@ export async function postData(url: string, payload: any, tags?: string) {
     }
 
     const res = await fetch(
-        process.env.NEXT_PUBLIC_BACKEND_URL + url,
+        "https://api2.khojgurbani.org/api/v1" + url,
         requestOptions
     );
 
@@ -53,6 +53,6 @@ export async function postData(url: string, payload: any, tags?: string) {
         throw new Error(`Failed to fetch data from ${url} with error ${res.status}`);
     }
 
-    console.log(process.env.NEXT_PUBLIC_BACKEND_URL, url, res.status);
+    console.log("https://api2.khojgurbani.org/api/v1", url, res.status);
     return res.json();
 }
